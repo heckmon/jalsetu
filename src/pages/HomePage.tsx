@@ -126,7 +126,11 @@ const WeatherAnimation = () => {
   );
 };
 // Hero Section
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+
 const Hero = () => {
+  const navigate = useNavigate(); // Initialize the navigate function
+
   return (
     <section className="hero-section">
       <div className="hero-background-animation">
@@ -149,11 +153,14 @@ const Hero = () => {
           sustainable water management in rural India
         </p>
         <div className="hero-buttons">
-          <button className="hero-button scale-on-hover">
+          <button
+            className="hero-button scale-on-hover"
+            onClick={() => navigate("/education")}
+          >
             <Info size={18} className="button-icon" />
             <span>Get Educated</span>
           </button>
-          <button className="hero-button scale-on-hover">
+          <button className="hero-button scale-on-hover" onClick={() => navigate("/smartig")}>
             <Droplet size={18} className="button-icon" />
             <span>Irrigation Guide</span>
           </button>
@@ -169,10 +176,10 @@ const Hero = () => {
       </div>
       <WeatherAnimation />
       <div className="scroll-down-indicator">
-          <div className="chevron"></div>
-          <div className="chevron"></div>
-          <div className="chevron"></div>
-        </div>
+        <div className="chevron"></div>
+        <div className="chevron"></div>
+        <div className="chevron"></div>
+      </div>
     </section>
   );
 };

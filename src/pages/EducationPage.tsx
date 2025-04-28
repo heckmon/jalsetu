@@ -545,8 +545,6 @@ const Multimedia = () => {
   );
 };
 
-// Call To Action Section
-// Enhanced Call To Action Section with animations
 const CallToAction = () => {
   return (
     <section className="cta-section animated-gradient-cta">

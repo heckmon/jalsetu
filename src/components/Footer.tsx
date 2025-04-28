@@ -1,10 +1,11 @@
 import { ChevronRight, Droplet } from "lucide-react";
 import "../styles/footer.css";
 import { createRoot } from "react-dom/client";
-import HomePage from "../pages/HomePage";
-import EducationPage from "../pages/EducationPage";
+import EducationPage from "../pages/EducationPage"
+import { useNavigate } from "react-router-dom";;
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -29,12 +30,7 @@ const Footer = () => {
                 <a
                   href="#"
                   className="footer-link hover-slide-animation"
-                  onClick={() => {
-                    const root = createRoot(
-                      document.getElementById("root") as HTMLElement
-                    );
-                    root.render(<HomePage />);
-                  }}
+                  onClick={() => navigate("/")}
                 >
                   <ChevronRight size={14} className="footer-link-icon" /> Home
                 </a>
@@ -55,7 +51,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="footer-link hover-slide-animation">
+                <a href="#" className="footer-link hover-slide-animation" onClick={() => navigate("/smartig")}>
                   <ChevronRight size={14} className="footer-link-icon" />{" "}
                   Irrigation Guide
                 </a>

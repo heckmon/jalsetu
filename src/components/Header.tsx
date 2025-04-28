@@ -5,10 +5,13 @@ import { createRoot } from 'react-dom/client';
 import HomePage from '../pages/HomePage';
 import EducationPage from '../pages/EducationPage';
 import SmartIrrigationGuide from '../pages/SmartIrrigationGuide';
+import { useNavigate } from "react-router-dom";
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,13 +68,13 @@ const Header = () => {
         </button>
 
         <nav className="desktop-nav">
-          <a href="#" className="nav-link hover-animation" onClick={() => handleNavigation(<HomePage />)}>
+          <a href="#" className="nav-link hover-animation" onClick={() => navigate("/")}>
             Home
           </a>
-          <a href="#" className="nav-link hover-animation" onClick={() => handleNavigation(<EducationPage />)}>
+          <a href="#" className="nav-link hover-animation" onClick={() => navigate("/education")}>
             Education
           </a>
-          <a href="#" className="nav-link hover-animation" onClick={() => handleNavigation(<SmartIrrigationGuide />)}>
+          <a href="#" className="nav-link hover-animation" onClick={() => navigate("/smartig")}>
             Irrigation
           </a>
           <a href="#" className="nav-link hover-animation">
